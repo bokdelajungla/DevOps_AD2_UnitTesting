@@ -46,18 +46,18 @@ Si se envía más de una palabra devolvera una respuesta 400 BAD REQUEST con un 
 
 ## Tests
 En la carpeta tests se han incluído los test unitarios para probar el funcionamiento del servicio intentando tener una cobertura del 100%
-*test_almacena.py -- prueba el funcionamiento del endpoint "almacena"
-*test_consulta.py -- prueba el funcionamiento del endpoint "consulta"
-*test_others.py   -- prueba el funcionamiento del resto de funciones de server.py 
+* test_almacena.py -- prueba el funcionamiento del endpoint "almacena"
+* test_consulta.py -- prueba el funcionamiento del endpoint "consulta"
+* test_others.py   -- prueba el funcionamiento del resto de funciones de server.py 
 
 Para poder ejecutar los test y ver su cobertura es necesario instalar _pytest_ y _coverage_
 
-Para evaluar la covertura:
-coverage run -m pytest
-Para visualizar el resultado:
-coverage report
-Para generar un reporte detallado en HTML:
-coverage html
+Para evaluar la covertura:\
+coverage run -m pytest\
+Para visualizar el resultado:\
+coverage report\
+Para generar un reporte detallado en HTML:\
+coverage html\
 
 ## Autores ✒️
 
