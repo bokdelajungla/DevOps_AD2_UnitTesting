@@ -52,12 +52,12 @@ En la carpeta tests se han incluído los test unitarios para probar el funcionam
 
 Para poder ejecutar los test y ver su cobertura es necesario instalar _pytest_ y _coverage_
 
-Para evaluar la covertura:\
-* _coverage run -m pytest_\
-Para visualizar el resultado:\
-* _coverage report_\
-Para generar un reporte detallado en HTML:\
-* _coverage html_\
+Para evaluar la covertura:
+* _coverage run -m pytest_
+Para visualizar el resultado:
+* _coverage report_
+Para generar un reporte detallado en HTML:
+* _coverage html_
 Es resultado de éste último cuando se ejecutó en nuestra máquina se ha incluido en el repositorio.
 
 ## Autores ✒️
