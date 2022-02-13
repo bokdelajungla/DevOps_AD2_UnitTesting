@@ -5,6 +5,7 @@ Repositorio para la actividad 2 de DevOps sobre Unit Testing
 Se pide al alumno extender la aplicación web creada en el anterior ejercicio:
 * Se añadirán tests de tipo unitario que nos ayuden a verificar el funcionamiento de nuestros endpoints.
 * Se añadirá un script que facilite la provisión del servicio, cuya invocación permite comenzar a hacer peticiones al mismo.
+
 Para saber si nuestra batería de tests es suficiente, se utilizan herramientas de medición de cobertura, que miden qué porcentaje de nuestro código se recorre con los tests que ejecutamos.
 
 ## Implementación
