@@ -17,7 +17,9 @@ from flask import make_response
 from flask import jsonify
 # Hacemos uso de la biblioteca unicodedata para tratar las tildes y caracteres epeciales
 import unicodedata
-
+# Para hacer uso de argumentos
+import sys
+import argparse
 
 # *** VARIABLES *** #
 # Nombre del fichero de persistencia
@@ -30,6 +32,15 @@ HOST = "127.0.0.1"
 PORT = 12345
 
 # *** METODOS *** #
+# Comprobación de argumentos
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f", '--file', type=str, help="nombre del fichero de persistencia", required=False, default=FILENAME)
+    parser.add_argument("-p", '--port', type=int, help="numero de puerto de escucha", required=False, default=PORT)
+    args = parser.parse_args()
+    print("Escuchando en puerto: ", args.port)
+    return args.file, args.port
+
 
 # Comprobación existencia del fichero de persistencia
 def check_file(FILENAME):
@@ -124,5 +135,6 @@ def consultar():
 # (Esto se excluye del test porque el check_file() tiene su propio test
 # y app.run() depende de Flask)
 if __name__ == "__main__": #pragma: no cover
-    check_file(FILENAME)
-    app.run(host=HOST, port=PORT)
+    file, port = main()
+    check_file(file)
+    app.run(host=HOST, port=port)

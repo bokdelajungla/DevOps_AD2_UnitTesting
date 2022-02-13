@@ -1,7 +1,13 @@
 
 import os
+import sys
+
+import pytest
+import argparse
 from server import check_file
 from server import app
+from server import main
+
 
 def test_create_file():
     assert (check_file("test.txt") == 0)
@@ -18,3 +24,4 @@ def test_homepage():
     assert response.status_code == 200
     assert b"Servicio Web para Cadenas" in response.data
     return 0
+
