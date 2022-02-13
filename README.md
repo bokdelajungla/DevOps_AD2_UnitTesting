@@ -4,8 +4,8 @@ Repositorio para la actividad 2 de DevOps sobre Unit Testing
 ## Enunciado
 Se pide al alumno extender la aplicación web creada en el anterior ejercicio:\
 * Se añadirán tests de tipo unitario que nos ayuden a verificar el funcionamiento de nuestros endpoints.
-* Se añadirá un script que facilite la provisión del servicio, cuya invocación permite comenzar a hacer peticiones al mismo.
-Para saber si nuestra batería de tests es suficiente, se utilizan herramientas de medición de cobertura, que miden qué porcentaje de nuestro código se recorre con los tests que ejecutamos.\
+* Se añadirá un script que facilite la provisión del servicio, cuya invocación permite comenzar a hacer peticiones al mismo.\
+Para saber si nuestra batería de tests es suficiente, se utilizan herramientas de medición de cobertura, que miden qué porcentaje de nuestro código se recorre con los tests que ejecutamos.
 
 ## Implementación
 Se ha optado por realizar una implementación del servicio usando Python y Flask mediante peticiones POST y GET al servidor.\
@@ -23,7 +23,7 @@ Para iniciar la palicación ejecutar el comando: _python server.py [-h] [-f \<fi
 Si no se indica ningún parámetro se levantará el servicio con las opciones por defecto que son usando el fichero "cadenas.txt" en el puerto 12345.\
 Para terminar la aplicación pulsar Ctrl+C 
 
-Para Windows, se ha creado el fichero start.bat que inicia el servicio con sus valores por defecto
+Para Windows, se ha creado el fichero _start.bat_ que inicia el servicio con sus valores por defecto
 
 ## Funcionamiento
 Los dos endpoints son 
