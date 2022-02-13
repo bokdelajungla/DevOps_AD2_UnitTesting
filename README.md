@@ -23,6 +23,8 @@ Para iniciar la palicación ejecutar el comando: _python server.py [-h] [-f \<fi
 Si no se indica ningún parámetro se levantará el servicio con las opciones por defecto que son usando el fichero "cadenas.txt" en el puerto 12345.\
 Para terminar la aplicación pulsar Ctrl+C 
 
+Para Windows, se ha creado el fichero start.bat que inicia el servicio con sus valores por defecto
+
 ## Funcionamiento
 Los dos endpoints son 
 * /almacena
@@ -47,6 +49,8 @@ En la carpeta tests se han incluído los test unitarios para probar el funcionam
 *test_almacena.py -- prueba el funcionamiento del endpoint "almacena"
 *test_consulta.py -- prueba el funcionamiento del endpoint "consulta"
 *test_others.py   -- prueba el funcionamiento del resto de funciones de server.py 
+
+Para poder ejecutar los test y ver su cobertura es necesario instalar _pytest_ y _coverage_
 
 Para evaluar la covertura:
 coverage run -m pytest
