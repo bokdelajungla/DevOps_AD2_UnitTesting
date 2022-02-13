@@ -19,7 +19,7 @@ Para probar el funcionamiento se recomienda emplear un programa como Curl.
 
   
 ### Ejecución
-Para iniciar la palicación ejecutar el comando: _python server.py [-h] [-f <filename>] [-p <puerto>]_\
+Para iniciar la palicación ejecutar el comando: _python server.py [-h] [-f \<filename\>] [-p \<puerto\>]_\
 Si no se indica ningún parámetro se levantará el servicio con las opciones por defecto que son usando el fichero "cadenas.txt" en el puerto 12345.\
 Para terminar la aplicación pulsar Ctrl+C 
 
