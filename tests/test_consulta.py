@@ -1,5 +1,12 @@
 
+from server import Flask
 from server import app
+from server import HOST
+from server import main
+from unittest import mock
+import argparse
+import json
+
 
 def test_consulta_get():
     # Create a test client using the Flask application configured for testing
@@ -7,6 +14,7 @@ def test_consulta_get():
         response = test_client.get('/consulta?string=test')
         assert response.status_code == 200
         assert b"Lineas en las que aparece" in response.data
+        #assert b"4" in response.data
     return 0
 
 def test_consulta_bad_request_no_string_parameter():

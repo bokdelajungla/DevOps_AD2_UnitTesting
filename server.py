@@ -23,35 +23,42 @@ import argparse
 
 # *** VARIABLES *** #
 # Nombre del fichero de persistencia
-FILENAME = "cadenas.txt"
-# La aplicación a partir de la clase Flask
-app = Flask(__name__)
+FILENAME = "cadenas.txt" #Fichero por defecto
 # Host
 HOST = "127.0.0.1"
 # Puerto
-PORT = 12345
+PORT = 12345 #Puerto por defecto
+
+# La aplicación a partir de la clase Flask
+app = Flask(__name__)
 
 # *** METODOS *** #
 # Comprobación de argumentos
 def main():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument("-f", '--file', type=str, help="nombre del fichero de persistencia", required=False, default=FILENAME)
     parser.add_argument("-p", '--port', type=int, help="numero de puerto de escucha", required=False, default=PORT)
+    parser.add_argument("-t", '--test', action='store_true', help="Levanta un servidor para los tests", required=False)
     args = parser.parse_args()
+    if(args.test):
+        args.port = 23456
+        args.file = "tests/test.txt"
+        print("Ejecutando el servidor de tests")
+
     print("Escuchando en puerto: ", args.port)
     return args.file, args.port
 
 
 # Comprobación existencia del fichero de persistencia
-def check_file(FILENAME):
+def check_file(fichero):
     try:
-        with open(FILENAME, "x") as file: #Si el fichero existe lanza una excepcion
-            print("Creando fichero de persistencia: " + FILENAME)
+        with open(fichero, "x") as f: #Si el fichero existe lanza una excepcion
+            print("Creando fichero de persistencia: " + fichero)
             return 0
 
     except FileExistsError:
         print("Encontrado fichero de persistencia...")
-        print("Cargando datos de " + FILENAME)
+        print("Cargando datos de " + fichero)
         return 1
 
 
@@ -132,9 +139,13 @@ def consultar():
 
 
 # Para que se inicie la aplicación al ejecutar el script
-# (Esto se excluye del test porque el check_file() tiene su propio test
+# (Esto se excluye del test porque
+# check_file() tiene su propio test
+# main() tiene también su propio test
 # y app.run() depende de Flask)
 if __name__ == "__main__": #pragma: no cover
     file, port = main()
+    FILENAME = file
+    PORT = port
     check_file(file)
     app.run(host=HOST, port=port)
